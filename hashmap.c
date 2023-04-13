@@ -109,7 +109,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-  size_t posicion = map->current;
+  size_t posicion = map->current + 1;
   if(map->size == 0)
     return NULL;
   
