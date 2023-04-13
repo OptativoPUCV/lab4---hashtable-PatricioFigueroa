@@ -51,3 +51,18 @@ Thu 13 Apr 2023 04:29:30 PM UTC:
  tests:  5|4
 total_score: 30/70
 e886b97
+Thu 13 Apr 2023 04:40:07 PM UTC: 
+ hashmap.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:90:17: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘bucket’; did you mean ‘buckets’?
+   90 |     return map->bucket[posicion];
+      |                 ^~~~~~
+      |                 buckets
+hashmap.c:91:1: error: control reaches end of non-void function [-Werror=return-type]
+   91 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+1e11473
