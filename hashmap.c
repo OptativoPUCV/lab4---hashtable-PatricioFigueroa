@@ -117,7 +117,7 @@ Pair * nextMap(HashMap * map) {
       return NULL;
    while( map->buckets[posicion] == NULL  )
   {
-    if(posicion > map->capacity)
+    if(posicion >= map->capacity)
       return NULL;
     posicion = (posicion + 1) ;
   }
