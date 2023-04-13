@@ -96,8 +96,15 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+  size_t posicion = 0;
+   while( map->buckets[posicion]  != NULL )
+  {
+    if(map->buckets[posicion]->key != NULL)
+      break;
+    posicion = (posicion + 1)% map->capacity ;
+  }
+  
+    return map->buckets[posicion];
 }
 
 Pair * nextMap(HashMap * map) {
