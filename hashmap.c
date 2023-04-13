@@ -46,14 +46,18 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-
+    
 
 }
 
 
 HashMap * createMap(long capacity) {
-
-    return NULL;
+    HashMap *nuevo = malloc(sizeof(HashMap));
+    nuevo->buckets = calloc(sizeof(Pair) , 1);
+    nuevo->capacity = 0;
+    nuevo->size = 0;
+    nuevo->current = -1;
+    return nuevo;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
