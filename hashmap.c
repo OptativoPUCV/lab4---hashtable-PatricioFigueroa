@@ -104,7 +104,7 @@ Pair * firstMap(HashMap * map) {
   {
     posicion = (posicion + 1)% map->capacity ;
   }
-  
+  map->current = posicion;
   return map->buckets[posicion];
 }
 
