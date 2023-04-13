@@ -97,7 +97,10 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
   size_t posicion = 0;
-   while( map->buckets[posicion]  != NULL )
+  if(map->size == 0)
+    return NULL;
+  
+   while( map->buckets[posicion] != NULL )
   {
     if(map->buckets[posicion]->key != NULL)
       break;
