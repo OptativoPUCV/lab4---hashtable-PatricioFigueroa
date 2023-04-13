@@ -100,14 +100,14 @@ Pair * firstMap(HashMap * map) {
   if(map->size == 0)
     return NULL;
   
-   while( map->buckets[posicion] != NULL )
+   while( map->buckets[posicion] == NULL )
   {
     if(map->buckets[posicion]->key != NULL)
       break;
     posicion = (posicion + 1)% map->capacity ;
   }
   
-    return map->buckets[posicion];
+  return map->buckets[posicion];
 }
 
 Pair * nextMap(HashMap * map) {
