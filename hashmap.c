@@ -54,8 +54,12 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-    map->buckets = realloc(map->buckets, sizeof(Pair) * 2 * (map->capacity));
-    map->capacity *=2;
+    Pair ** old_buckets = map->buckets;
+    map-> capacity *= 2;
+    Pair ** nuevo = calloc(sizeof(Pair) , map->capacity);
+    map->buckets = nuevo;
+    for(size_t k = 0; k < (map->capacity)/2; k++)
+      insertMap(map, old_buckets->key, old_buckets->value);
 }
 
 

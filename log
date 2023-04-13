@@ -313,3 +313,18 @@ Thu 13 Apr 2023 05:31:10 PM UTC:
  tests:  16|1
 total_score: 60/70
 4e998cd
+Thu 13 Apr 2023 05:38:29 PM UTC: 
+ hashmap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:62:33: error: ‘*old_buckets’ is a pointer; did you mean to use ‘->’?
+   62 |       insertMap(map, old_buckets->key, old_buckets->value);
+      |                                 ^~
+      |                                 ->
+hashmap.c:62:51: error: ‘*old_buckets’ is a pointer; did you mean to use ‘->’?
+   62 |       insertMap(map, old_buckets->key, old_buckets->value);
+      |                                                   ^~
+      |                                                   ->
+Compilation failed
+eb78984
