@@ -52,7 +52,7 @@ size_t posicion = hash(key, map->capacity);
     }
   map->buckets[posicion] = createPair(key,value);
   map->size ++;
-
+}
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     
