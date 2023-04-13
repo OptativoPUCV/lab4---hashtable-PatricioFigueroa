@@ -123,3 +123,14 @@ Thu 13 Apr 2023 04:41:50 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 5aa3c0b
+Thu 13 Apr 2023 04:42:14 PM UTC: 
+ hashmap.c | 11 -----------
+ 1 file changed, 11 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:80:1: error: control reaches end of non-void function [-Werror=return-type]
+   80 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+852a168
