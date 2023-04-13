@@ -87,7 +87,7 @@ Pair * searchMap(HashMap * map,  char * key) {
       
     }
 
-    return (map->bucket[posicion]);
+    return (map->buckets[posicion]);
 }
 
 Pair * firstMap(HashMap * map) {
