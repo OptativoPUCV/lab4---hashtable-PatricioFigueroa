@@ -54,8 +54,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-    
-
+    map->buckets = realloc(map->buckets, )
 }
 
 
@@ -109,13 +108,15 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-  size_t posicion = map->current + 1;
+  size_t posicion = (map->current + 1) ;
   if(map->size == 0 || posicion > map->capacity)
     return NULL;
   
    while( map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL )
   {
-    posicion = (posicion + 1)% map->capacity ;
+    if(posicion > map->capacity)
+      return NULL;
+    posicion = (posicion + 1) ;
   }
   map->current = posicion;
   return map->buckets[posicion];
