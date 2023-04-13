@@ -181,3 +181,14 @@ Thu 13 Apr 2023 04:46:40 PM UTC:
  tests:  6|4
 total_score: 30/70
 6a01960
+Thu 13 Apr 2023 04:47:18 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:89:18: error: assignment to ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   89 |     map->current = map->buckets[posicion];
+      |                  ^
+cc1: all warnings being treated as errors
+Compilation failed
+9d089da
