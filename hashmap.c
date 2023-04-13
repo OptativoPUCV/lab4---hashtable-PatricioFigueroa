@@ -100,10 +100,8 @@ Pair * firstMap(HashMap * map) {
   if(map->size == 0)
     return NULL;
   
-   while( map->buckets[posicion] == NULL )
+   while( map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL )
   {
-    if(map->buckets[posicion]->key != NULL)
-      break;
     posicion = (posicion + 1)% map->capacity ;
   }
   
