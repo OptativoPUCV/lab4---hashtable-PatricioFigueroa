@@ -333,3 +333,18 @@ Thu 13 Apr 2023 05:38:46 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 bddea45
+Thu 13 Apr 2023 05:39:21 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:62:36: error: ‘*(old_buckets + (sizetype)(k * 8))’ is a pointer; did you mean to use ‘->’?
+   62 |       insertMap(map, old_buckets[k].key, old_buckets[k].value);
+      |                                    ^
+      |                                    ->
+hashmap.c:62:56: error: ‘*(old_buckets + (sizetype)(k * 8))’ is a pointer; did you mean to use ‘->’?
+   62 |       insertMap(map, old_buckets[k].key, old_buckets[k].value);
+      |                                                        ^
+      |                                                        ->
+Compilation failed
+b3fbcdd
